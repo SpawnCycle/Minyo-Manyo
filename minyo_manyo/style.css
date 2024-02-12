@@ -2,6 +2,14 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0;
+    font-family: "Roboto Mono", serif;
+}
+
+.content {
+    padding: .5em;
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
 #container {
@@ -21,7 +29,7 @@ body {
     display: flex;
 }
 
-#sidebar {
+#sidebar-div {
     border: 1px solid black;
     width: 25%;
     height: 100%;
@@ -35,6 +43,8 @@ body {
 
 #basket {
     position: absolute;
-    right: -15vw;
-    top: 25vh;
+    width: 25vw;
+    height: 60vh;
+    right: 5vw;
+    top: 10vh;
 }
