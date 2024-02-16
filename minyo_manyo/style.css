@@ -19,11 +19,15 @@ body {
 
 .content {
     /* TODO: item grid */
-    display: grid;
+    /* display: grid;
     padding: .5em;
-    margin: 1em;
+    margin: 1em; */
     /* border: 1px solid black; */
     /* border-radius: 15px; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 600px) {
@@ -89,6 +93,7 @@ body {
     height: 100%;
     position: relative;
     opacity: 1;
+    overflow-y: scroll;
 }
 
 #content-div::before {
@@ -155,7 +160,8 @@ img {
     height: 20vh;
     background-color: rgba(0, 0, 0, .75);
     padding: 1em;
-    margin-inline: 20%;
+    /* margin-inline: 20%; */
     margin-bottom: 2rem;
     border-radius: 20px;
+    width: 100px;
 }

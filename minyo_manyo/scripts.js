@@ -7,7 +7,31 @@ const list_of_items = [
         name: "name",
         img: "img/company_logo.png",
         misc: "misc",
-        desc: "description",
+        desc: "A quick thext that will appear as a placeholder till i find something that fits ",
+    },     
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "A quick thext that will appear as a placeholder till i find something that fits ",
+    },   
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "A quick thext that will appear as a placeholder till i find something that fits ",
+    },   
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "A quick thext that will appear as a placeholder till i find something that fits ",
+    },   
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "A quick thext that will appear as a placeholder till i find something that fits ",
     },
 ]
 
