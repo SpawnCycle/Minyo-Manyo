@@ -5,44 +5,44 @@ const products = document.getElementById("products");
 const list_of_items = [
     {
         name: "Model B",
+        img: "img/pi_1_model_b.png",
+        price: "10 euro",
+        desc: "This is an example short description But description lenght shouldnt be more than this for each item it will just be different text",
+    },
+    {
+        name: "name",
         img: "img/company_logo.png",
-        misc: "Raspberry Pi",
+        price: "misc",
         desc: "description",
     },
     {
         name: "name",
         img: "img/company_logo.png",
-        misc: "misc",
+        price: "misc",
         desc: "description",
     },
     {
         name: "name",
         img: "img/company_logo.png",
-        misc: "misc",
+        price: "misc",
         desc: "description",
     },
     {
         name: "name",
         img: "img/company_logo.png",
-        misc: "misc",
+        price: "misc",
         desc: "description",
     },
     {
         name: "name",
         img: "img/company_logo.png",
-        misc: "misc",
+        price: "misc",
         desc: "description",
     },
     {
         name: "name",
         img: "img/company_logo.png",
-        misc: "misc",
-        desc: "description",
-    },
-    {
-        name: "name",
-        img: "img/company_logo.png",
-        misc: "misc",
+        price: "misc",
         desc: "description",
     },
     
