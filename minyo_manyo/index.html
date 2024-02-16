@@ -10,25 +10,42 @@
 <body onload="main()">
     <div id="container">
         <div id="navbar">
-            <div class="content">
-                asd
+            <img src="img/company_logo.png" alt="the logo of our fabulous company" class="logo">
+            <div class="nav_content">
+                navItem1
             </div>
+            <div class="nav_content">
+                navItem2
+            </div>
+            <div class="nav_content">
+                navItem3
+            </div>
+            <div class="nav_content">
+                navItem4
+            </div>
+            <img src="img/basket.png" id="toggleBasket" onclick="toggleBasket()">
         </div>
         <div id="main_container">
             <div id="sidebar-div">
                 <div class="content" id="sidebar">
-                    asd
+                    sidebar
                 </div>
             </div>
             <div id="content-div">
                 <div class="content" id="products">
-                    asd
+                    <div id="toggleSidebar" onclick="toggleSidebar()"></div>
+                    <h1>EPIC WEBSHOP</h1>
+                    <div class="product_showcase">
+                        <h3>Epic product name</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et inventore magnam ipsam expedita pariatur dolores laborum voluptatem, sapiente aut incidunt perspiciatis id obcaecati corrupti esse quas repellat voluptatibus eum hic?</p>
+                        <img src="" alt="product image">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="basket" class="content">
-        asd
+        basket
     </div>
     <script src="scripts.js"></script>
     <!-- the startup function won't load if we link it in the head -->

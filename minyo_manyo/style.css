@@ -1,3 +1,15 @@
+:root {
+    /* color palette */
+    --clr_backdrop: #01303f;
+    --clr_midlevel: #02447a;
+    --clr_accent1: #02a9f7;
+    --clr_accent2: #89d6fb;
+    --clr_accent3: #d4f0fc;
+
+    /* for proper rem/em values */
+    font-size: 14px;
+}
+
 body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -8,19 +20,39 @@ body {
 .content {
     padding: .5em;
     margin: 1em;
-    border: 1px solid black;
-    border-radius: 15px;
+    /* border: 1px solid black; */
+    /* border-radius: 15px; */
 }
 
 #container {
+    background-color: var(--clr_backdrop);
     width: inherit; 
     height: 100svh;
 }
 
 #navbar {
-    border: 1px solid black;
-    height: 10%;
+    border: 1px solid black; /*if i remove this line, a mysterious white line appears. Don't ask me - D*/
+    height: 7%;
     width: 100%;
+    border-bottom: var(--clr_accent1) 4px solid;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(0deg, rgb(0, 0, 0, .5) 0%, rgba(0, 0, 0, .35) 25%, rgba(255, 255, 255, 0) 100%);
+}
+
+.nav_content {
+    color: var(--clr_accent2);
+    text-decoration: none;
+}
+
+.logo {
+    position: absolute;
+    width: 30px;
+    left: 3.5rem;
+    box-shadow: var(--clr_midlevel) 0 0 35px;
 }
 
 #main_container {
@@ -33,11 +65,28 @@ body {
     border: 1px solid black;
     width: 25%;
     height: 100%;
+    display: none;
 }
 
 #content-div {
-    border: 1px solid black;
-    width: 75%;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 1;
+}
+
+#content-div::before {
+    content: '';
+    background-image: url(img/bg.jpg); /*i've no clue what we're selling so this bg will do as a placeholder*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
     height: 100%;
 }
 
@@ -47,4 +96,38 @@ body {
     height: 60vh;
     right: 5vw;
     top: 10vh;
+    background-color: var(--clr_accent3);
+    display: none;
+    border: var(--clr_accent1) 2px solid;
+    border-radius: 15px;
+    box-shadow: black 0 0 15px;
+}
+
+#toggleBasket {
+    position: absolute;
+    width: 30px;
+    right: 3.5rem;
+}
+
+h1 {
+    font-size: 80px;
+    text-align: center;
+}
+
+#products {
+    color: var(--clr_accent2);
+}
+
+#toggleSidebar {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.product_showcase {
+    background-color: rgba(0, 0, 0, .75);
+    padding: 1em;
+    margin-inline: 20%;
+    border-radius: 20px;
 }
