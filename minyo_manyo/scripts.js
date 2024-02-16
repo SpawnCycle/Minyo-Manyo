@@ -4,11 +4,48 @@ const products = document.getElementById("products");
 
 const list_of_items = [
     {
+        name: "Model B",
+        img: "img/company_logo.png",
+        misc: "Raspberry Pi",
+        desc: "description",
+    },
+    {
         name: "name",
         img: "img/company_logo.png",
         misc: "misc",
         desc: "description",
     },
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+    
 ]
 
 function main() {
