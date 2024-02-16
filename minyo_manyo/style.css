@@ -18,10 +18,19 @@ body {
 }
 
 .content {
+    /* TODO: item grid */
+    display: grid;
     padding: .5em;
     margin: 1em;
     /* border: 1px solid black; */
     /* border-radius: 15px; */
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        grid-template-columns: repeat(1, 1fr);
+        /* Man pls move the title to a different place and make the items grid, thx - L */
+    }
 }
 
 #container {
@@ -31,7 +40,7 @@ body {
 }
 
 #navbar {
-    border: 1px solid black; /*if i remove this line, a mysterious white line appears. Don't ask me - D*/
+    border: 1px solid black; /*if i remove this line, a mysterious white line appears. Don't ask me - D*/ /* Damn xd - L*/
     height: 7%;
     width: 100%;
     border-bottom: var(--clr_accent1) 4px solid;
@@ -41,6 +50,12 @@ body {
     justify-content: center;
     position: relative;
     background: linear-gradient(0deg, rgb(0, 0, 0, .5) 0%, rgba(0, 0, 0, .35) 25%, rgba(255, 255, 255, 0) 100%);
+}
+
+.product_image {
+    float: left;
+    aspect-ratio: 1/1;
+    height: inherit;
 }
 
 .nav_content {
@@ -125,7 +140,15 @@ h1 {
     position: absolute;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .product_showcase {
+    align-items: center;
+    overflow-y: hidden;
+    height: 20vh;
     background-color: rgba(0, 0, 0, .75);
     padding: 1em;
     margin-inline: 20%;

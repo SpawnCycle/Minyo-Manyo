@@ -2,7 +2,17 @@ const basket = document.getElementById("basket");
 const sidebar = document.getElementById("sidebar-div");
 const products = document.getElementById("products");
 
+const list_of_items = [
+    {
+        name: "name",
+        img: "img/company_logo.png",
+        misc: "misc",
+        desc: "description",
+    },
+]
+
 function main() {
+    make_products()
     // does stuff on startup
 }
 
@@ -24,4 +34,34 @@ function toggleSidebar() {
         sidebar.style.display = "none";
     }
     isSidebarVisible = !isSidebarVisible;
+}
+
+function make_products() {
+    list_of_items.forEach(element => {
+        var div = document.createElement("div");
+        div.setAttribute("class", "product_showcase");
+        var image_div = document.createElement("div");
+        image_div.setAttribute("class", "product_image");
+        image_div.innerHTML = "<img src = \'"+ element.img +"\' alt = \'product image\'>"; // we do a bit of react - L
+        var desc_div = document.createElement("div")
+        desc_div.setAttribute("class", "product_desc");
+        desc_div.innerHTML = `
+        <h3>`+ element.name +`</h3>
+        <p>`+ element.desc +`</p>
+        `;
+        div.appendChild(image_div);
+        div.appendChild(desc_div);
+        products.appendChild(div);
+    });
+}
+
+function remove_products() {
+    let items = document.getElementsByClassName("product_showcase");
+
+    // debug
+    // console.log("huh???")
+
+    while (items[0]) { // because it constantly removes from list, so iterating the list would skip elements
+        items[0].parentNode.removeChild(items[0]);
+    }
 }
