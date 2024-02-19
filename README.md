@@ -11,4 +11,4 @@ Company logo (very cool):
 
 ![Company logo](minyo_manyo/img/company_logo.png)
 
-KL© CinCin™
+KL© CinCin™ (Do not take this seriously)
