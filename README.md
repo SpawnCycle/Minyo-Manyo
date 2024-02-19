@@ -10,3 +10,5 @@ We have many innovative features such as:
 Company logo (very cool):
 
 ![Company logo](minyo_manyo/img/company_logo.png)
+
+KL© CinCin™
