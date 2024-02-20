@@ -86,6 +86,8 @@ const list_of_items = [
 ]
 
 function main() {
+    // build_by_price()
+    // build_by_price("desc")
     make_products()
     // does stuff on startup
 }
@@ -110,8 +112,9 @@ function toggleSidebar() {
     isSidebarVisible = !isSidebarVisible;
 }
 
-function make_products() {
-    list_of_items.forEach(element => {
+function make_products(items = list_of_items) {
+    console.log(items)
+    items.forEach(element => {
         var div = document.createElement("div");
         div.setAttribute("class", "product_showcase");
         var image_div = document.createElement("div");
@@ -189,4 +192,39 @@ function remove_from_basket(button) {
     let item_removed = button.parentElement.firstChild.innerText; // for future use, maybe alert?
     let item_div = button.parentElement.parentElement;
     basket.removeChild(item_div);
+}
+
+function build_by_price(which_way = "asc") {
+    console.log("test");
+    remove_products();
+    make_products(sort_by_price(which_way));
+}
+
+function sort_by_price(which_way) {
+    let sorted_list = [];
+    list_of_items.forEach(element => {
+        sorted_list.push(element)
+    });
+
+    for (let i = 0; i < sorted_list.length; i++) {
+        for (j = 0; i <sorted_list.length; i++) {
+            if (parseInt(sorted_list[j].price > sorted_list[j + 1].price)) {
+                let tmp = sorted_list[j + 1];
+                sorted_list[j + 1] = sorted_list[j];
+                sorted_list[j] = tmp;
+            }
+        }
+    }
+
+    switch (which_way) {
+        case "asc":
+            return sorted_list;
+            break;
+        case "desc":
+            return sorted_list.reverse();
+            break;
+        default:
+            return sorted_list;
+            break;
+    }
 }
