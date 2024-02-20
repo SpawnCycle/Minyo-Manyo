@@ -113,6 +113,7 @@ body {
 
 #basket {
     position: absolute;
+    overflow-x: scroll;
     width: 25vw;
     height: 60vh;
     right: 5vw;
