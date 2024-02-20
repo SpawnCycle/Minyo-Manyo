@@ -185,6 +185,8 @@ function add_to_basket(name) {
     });
 }
 
-function remove_from_basket() {
-    let no;
+function remove_from_basket(button) {
+    let item_removed = button.parentElement.firstChild.innerText; // for future use, maybe alert?
+    let item_div = button.parentElement.parentElement;
+    basket.removeChild(item_div);
 }
