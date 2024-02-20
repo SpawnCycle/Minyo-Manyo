@@ -156,6 +156,7 @@ img {
 }
 
 .product_showcase {
+    position: relative;
     align-items: center;
     overflow-y: hidden;
     height: 20vh;
@@ -165,4 +166,21 @@ img {
     margin-bottom: 2rem;
     border-radius: 20px;
     width: 500px;
+}
+
+/* .product_showcase h1, p {
+    height: 50%;
+    overflow-y: hidden;
+} */
+
+.price_and_buy {
+    float: right;
+    /* position: absolute;
+    right: 5%;
+    bottom: 5%; */
+}
+
+.price_and_buy p {
+    font-size: large;
+    font-style: oblique;
 }
