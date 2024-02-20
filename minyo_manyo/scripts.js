@@ -113,7 +113,6 @@ function toggleSidebar() {
 }
 
 function make_products(items = list_of_items) {
-    console.log(items)
     items.forEach(element => {
         var div = document.createElement("div");
         div.setAttribute("class", "product_showcase");
@@ -195,7 +194,6 @@ function remove_from_basket(button) {
 }
 
 function build_by_price(which_way = "asc") {
-    console.log("test");
     remove_products();
     make_products(sort_by_price(which_way));
 }
