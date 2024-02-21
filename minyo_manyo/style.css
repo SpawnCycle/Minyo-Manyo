@@ -5,6 +5,7 @@
     --clr_accent1: #02a9f7;
     --clr_accent2: #89d6fb;
     --clr_accent3: #d4f0fc;
+    --clr_bg: rgba(1, 48, 63, .7);
 
     /* for proper rem/em values */
     font-size: 14px;
@@ -39,7 +40,7 @@ body {
 }
 
 #container {
-    background-color: var(--clr_backdrop);
+    background-color: var(--clr_bg);
     width: inherit; 
     height: 100svh;
 }
@@ -48,6 +49,7 @@ body {
     border: 1px solid black; /*if i remove this line, a mysterious white line appears. Don't ask me - D*/ /* Damn xd - L*/
     height: 7%;
     width: 100%;
+    background-color: var(--clr_backdrop);
     border-bottom: var(--clr_accent1) 4px solid;
     display: flex;
     gap: 3rem;
@@ -99,17 +101,17 @@ body {
 
 #content-div::before {
     content: '';
-    background-image: url(img/bg.jpg); /*i've no clue what we're selling so this bg will do as a placeholder*/
-    background-size: cover;
-    background-repeat: repeat;
-    opacity: 0.2;
+    /* background-image: url(img/bg.jpg); */
+    /* background-size: cover;
+    background-repeat: repeat; */
+    /* opacity: 0; */
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     width: 100%;
     height: 100%;
-    position: fixed;
+    /* position: fixed; */
 }
 
 #basket {
@@ -193,4 +195,11 @@ li {
     list-style-type: none;
 }
 
-    
+.bg_image {
+    z-index: -1;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* opacity: 0.2; */
+}
