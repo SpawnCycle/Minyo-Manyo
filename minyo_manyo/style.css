@@ -91,16 +91,20 @@ body {
 #sidebar-div {
     position: absolute;
     left: -15vw;
-    transition: left 1.3s, margin-right 1.3s;
-    border: 1px solid black;
+    transition: left 1.3s,background-color 1.3s, margin-right 1.3s;
+    /* border: 1px solid black ; */
     width: 20vw;
     height: 100%;
     display:inline;
     z-index: 3;
+    background-color: rgba(0, 0, 0, .10);
     /* padding-left: 5vw; */
+    color: #89d6fb;
+    
 }
 #sidebar-div:hover {
     left: 0vw;
+    background-color: rgba(0, 0, 0, .75);
 }
 /* i am the angry pumpkin */
 #sidebar-div:hover .angrypumpkin {
