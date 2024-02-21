@@ -267,7 +267,7 @@ li {
 }
 
 button {
-    float: right;
+    /* float: right; */
     border: 2px solid;
     border-color: #89d6fb;
     background-color: transparent;
@@ -275,4 +275,7 @@ button {
 }
 .price_and_buy p:nth-child(1) {
     margin: 0px;
+}
+.price_and_buy button:nth-child(2) {
+    float: right;
 }
