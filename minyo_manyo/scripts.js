@@ -1,6 +1,9 @@
 const basket = document.getElementById("basket");
 const sidebar = document.getElementById("sidebar-div");
 const products = document.getElementById("products");
+const bask_elements = document.getElementById("basket_items");
+const checkout = document.getElementById("checkout");
+const price = document.getElementById("price");
 
 const list_of_items = [
     {
@@ -89,6 +92,7 @@ function main() {
     // build_by_price()
     // build_by_price("desc")
     make_products()
+    recalc_price()
     // does stuff on startup
 }
 
@@ -142,9 +146,6 @@ function make_products(items = list_of_items) {
 function remove_products() {
     let items = document.getElementsByClassName("product_showcase");
 
-    // debug
-    // console.log("huh???")
-
     while (items[0]) { // because it constantly removes from list, so iterating the list would skip elements
         items[0].parentNode.removeChild(items[0]);
     }
@@ -182,18 +183,20 @@ function add_to_basket(name) {
             desc_div.innerHTML = `
                 <p id="` + element.name + `">` + element.name + `</p>
                 <p>` + element.price + `</p>
-                <button onclick="remove_from_basket(this)">Remove</button>
+                <button onclick="remove_from_basket(this)" id ="` + element.name + `">Remove</button>
             `;
             master_div.appendChild(desc_div);
-            basket.appendChild(master_div);
+            document.getElementById("basket_items").appendChild(master_div);
         }
     });
+    recalc_price()
 }
 
 function remove_from_basket(button) {
     let item_removed = button.parentElement.firstChild.innerText; // for future use, maybe alert?
     let item_div = button.parentElement.parentElement;
-    basket.removeChild(item_div);
+    bask_elements.removeChild(item_div);
+    recalc_price()
 }
 
 function build_by_price(which_way = "asc") {
@@ -228,4 +231,30 @@ function sort_by_price(which_way) {
             return sorted_list;
             break;
     }
+}
+
+function recalc_price() {
+    let total = 0.00;
+    let to_find = [];
+    let elements = document.getElementsByClassName("basket_desc");
+    for (const child of elements) {
+        for (const chid of child.children) {
+            if (chid.tagName == "BUTTON") {
+                to_find.push(chid.id);
+            }
+        }
+    }
+    for (item of to_find) {
+        for (i of list_of_items) {
+            if (i.name == item) {
+                if (parseInt(i.price) == 0) {
+                    total += 0;
+                } else {
+                    total += parseFloat(i.price) + 0.99;
+                }
+
+            }
+        }
+    }
+    price.innerText = total + " €";
 }
