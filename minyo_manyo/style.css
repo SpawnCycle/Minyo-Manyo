@@ -230,7 +230,7 @@ li {
 }
 
 #basket_items {
-    height: 80%;
+    height: 75%;
     overflow-y: scroll;
 }
 
