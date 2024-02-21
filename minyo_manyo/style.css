@@ -39,6 +39,11 @@ body {
     }
 }
 
+.product_showcase h3:nth-child(1) {
+    margin: 0px;
+}
+
+
 #container {
     background-color: var(--clr_bg);
     width: inherit; 
@@ -240,4 +245,15 @@ li {
 
 #checkout > * {
     margin: 1vw;
+}
+
+button {
+    float: right;
+    border: 2px solid;
+    border-color: #89d6fb;
+    background-color: transparent;
+    color: #89d6fb;
+}
+.price_and_buy p:nth-child(1) {
+    margin: 0px;
 }
