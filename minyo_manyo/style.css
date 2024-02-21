@@ -190,7 +190,6 @@ li {
     /* opacity: 0.2; */
 }
 
-<<<<<<< HEAD
 #basket {
     position: absolute;
     overflow-x: hidden;
@@ -228,7 +227,8 @@ li {
 #basket > h3 {
     padding-left: 1em;
     color: var(--clr_accent3);
-=======
+}
+
 #basket_items {
     height: 80%;
     overflow-y: scroll;
@@ -240,5 +240,4 @@ li {
 
 #checkout > * {
     margin: 1vw;
->>>>>>> 2e57b82 (basket logic)
 }
