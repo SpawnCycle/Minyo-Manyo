@@ -129,7 +129,7 @@ function make_products(items = list_of_items) {
         buton.setAttribute("class", "price_and_buy");
         buton.innerHTML = `
             <p>` + element.price + `</p>
-            <button onclick="buy(this)">Buy</button>
+            <button onclick="buy(this)" id = "` + element.name + `">Buy</button>
         
         `; // we love react
         div.appendChild(buton);
@@ -151,13 +151,16 @@ function remove_products() {
 }
 
 function buy(that) {
-    desk_div = that.parentElement.parentElement.getElementsByClassName("product_desc")[0];
+    // desk_div = that.parentElement.parentElement.getElementsByClassName("product_desc")[0];
     let name;
-    for (const child of desk_div.children) {
-        if (child.tagName == "H3") {
-            name = child.innerText;
-        }
-    }
+    // for (const child of desk_div.children) {
+    //     if (child.tagName == "H3") {
+    //         name = child.innerText;
+    //     }
+
+    name = that.id;
+
+    // }
     if (name) {
         add_to_basket(name);
     }
@@ -177,7 +180,7 @@ function add_to_basket(name) {
             let desc_div = document.createElement("div");
             desc_div.setAttribute("class", "basket_desc");
             desc_div.innerHTML = `
-                <p>` + element.name + `</p>
+                <p id="` + element.name + `">` + element.name + `</p>
                 <p>` + element.price + `</p>
                 <button onclick="remove_from_basket(this)">Remove</button>
             `;
