@@ -39,7 +39,7 @@ body {
     }
 }
 
-.product_showcase h3:nth-child(1) {
+.product_showcase > h3 {
     margin: 0px;
 }
 
@@ -267,12 +267,16 @@ li {
 }
 
 button {
-    float: right;
+    /* float: right; */
     border: 2px solid;
-    border-color: #89d6fb;
+    border-color: var(--clr_midlevel);
     background-color: transparent;
-    color: #89d6fb;
+    color: var(--clr_midlevel);
 }
-.price_and_buy p:nth-child(1) {
+.price_and_buy > p {
     margin: 0px;
+}
+
+.price_and_buy > button {
+    float: right;
 }
