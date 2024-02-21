@@ -89,10 +89,16 @@ body {
 }
 
 #sidebar-div {
+    position: absolute;
+    left: -20%;
+    transition: left 1.3s;
     border: 1px solid black;
     width: 25%;
     height: 100%;
-    display: none;
+    display:inline;
+}
+#sidebar-div {
+    left: 0%;
 }
 
 #content-div {
