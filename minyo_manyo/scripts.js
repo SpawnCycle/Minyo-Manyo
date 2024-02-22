@@ -11,11 +11,11 @@ let poppedup = false;
 let total = 0.0;
 
 function main() {
-    // build_by_price()
+    build_by_price()
     // build_by_price("desc")
-    make_products()
+    // make_products()
     recalc_price()
-    popup("test")
+    // popup("test")
     // does stuff on startup
 }
 

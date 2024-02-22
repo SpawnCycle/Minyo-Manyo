@@ -238,8 +238,8 @@ li {
 
 .basket_img > img {
     position: absolute;
-    right: 25%; /* Beats me why but this is apparently the center of the div */
-    transform: translateX("-50%");
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #basket_items {
