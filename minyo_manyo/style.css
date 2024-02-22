@@ -250,7 +250,9 @@ li {
     padding-left: 1em;
     color: var(--clr_accent3);
 }
-
+.basket_img {
+    height: 10vh;
+}
 #basket_items {
     height: 75%;
     overflow-y: scroll;
