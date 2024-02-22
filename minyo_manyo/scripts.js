@@ -106,15 +106,15 @@ function toggleBasket() {
     isBasketVisible = !isBasketVisible;
 }
 
-let isSidebarVisible = false;
-function toggleSidebar() {
-    if (isSidebarVisible == false) {
-        sidebar.style.display = "inline";
-    } else {
-        sidebar.style.display = "none";
-    }
-    isSidebarVisible = !isSidebarVisible;
-}
+// let isSidebarVisible = false;
+// function toggleSidebar() {
+//     if (isSidebarVisible == false) {
+//         sidebar.style.display = "inline";
+//     } else {
+//         sidebar.style.display = "none";
+//     }
+//     isSidebarVisible = !isSidebarVisible;
+// }
 
 function make_products(items = list_of_items) {
     items.forEach(element => {
