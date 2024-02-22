@@ -214,7 +214,7 @@ li {
 
 .basket_element{
     background-color: #01303f55; /* transparent backdrop var */
-    color: var(--clr_midlevel);
+    color: var(--clr_accent2);
     display: block;
     margin-bottom: 1em;
     margin-inline: .5em;
@@ -257,9 +257,9 @@ li {
 
 button {
     border: 2px solid;
-    border-color: var(--clr_accent2);
-    background-color: transparent;
-    color: var(--clr_accent2);
+    border-color: inherit;
+    background-color: #11111155;
+    color: inherit;
     border-radius: 10px;
 }
 
