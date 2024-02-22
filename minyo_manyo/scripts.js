@@ -8,6 +8,7 @@ const popper = document.getElementById("popup");
 const popper_inf = document.getElementById("popup_info");
 
 let poppedup = false;
+let total = 0.0;
 
 function main() {
     // build_by_price()
@@ -23,7 +24,6 @@ function popup(info) {
         change_popup_info(info)
         popper.style.top = "50%";
         poppedup = true;
-        console.log("test")
     }
 }
 
@@ -39,9 +39,21 @@ function change_popup_info(info) {
     switch (info) {
         case "test":
             popper_inf.innerText = "info";
-            console.log("test")
+            break;
+        case "bui":
+            popper_inf.innerText = "Thank you for buying " + total + " € ammount of items";
             break;
     }
+}
+
+function checkout_baton() {
+    close_popup()
+    sleep(500).then(() => {
+        for (const child of bask_elements.children) {
+            bask_elements.removeChild(child);
+        }
+        popup("bui")
+    })
 }
 
 function make_products(items = list_of_items) {
@@ -112,7 +124,7 @@ function remove_from_basket(button) {
 }
 
 function recalc_price() {
-    let total = 0.00;
+    total = 0.00;
     let to_find = [];
     let elements = document.getElementsByClassName("basket_desc");
     for (const child of elements) {
@@ -187,6 +199,10 @@ function sort_by_price(which_way) {
             return sorted_list;
             break;
     }
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const list_of_items = [
