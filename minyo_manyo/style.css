@@ -182,19 +182,6 @@ li {
 
 #basket {
     position: absolute;
-    overflow-x: hidden;
-    width: 25vw;
-    height: 60vh;
-    right: 5vw;
-    top: 10vh;
-    background-color: var(--clr_backdrop);
-    display: none;
-    border: var(--clr_accent1) 2px solid;
-    border-radius: 15px;
-    box-shadow: black 0 0 15px;
-}
-#brisket {
-    position: absolute;
     right: -17vw;
     transition: right 1.3s,background-color 1.3s, margin-right 1.3s;
     border-left: 1px solid var(--clr_accent3) ;
@@ -206,7 +193,7 @@ li {
     color: #89d6fb;
    
 }
-#brisket:hover {
+#basket:hover {
     right: 0vw;
     background-color: rgba(0, 0, 0, .85);
 }
