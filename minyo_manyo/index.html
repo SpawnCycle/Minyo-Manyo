@@ -16,22 +16,33 @@
             <ul>
                 <li class="nav_content">navItem1</li>
                 <li class="nav_content">navItem2</li>
-                    <li class="nav_content">navItem3</li>
-                    <li class="nav_content">navItem4</li>
-                </ul>
-                <img src="img/basket.png" id="toggleBasket" onclick="toggleBasket()">
+                <li class="nav_content">navItem3</li>
+                <li class="nav_content">navItem4</li>
+            </ul>
+            <img src="img/basket.png" id="toggleBasket" onclick="toggleBasket()">
             </div>
             <div id="main_container">
             <div id="content-div">
-                <!-- <div id="toggleSidebar" onclick="toggleSidebar()"></div> -->
                 <h1>EPIC WEBSHOP</h1>
                 <div class="content" id="products">
-                    <!-- <button onclick="remove_products()">Lorem no worki ipsum</button> What the fuck -->
+                    <div class="product_showcase">
+                        <div class="price_and_buy">
+                            <p>999,99 €</p>
+                            <button onclick="buy(this)">Buy</button>
+                        </div>
+                        <div class = "product_image">
+                            <img src="img/company_logo.png" alt="product image">
+                        </div>
+                        <div class="product_desc">
+                            <h3>Epic product name</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et inventore magnam ipsam expedita pariatur dolores laborum voluptatem, sapiente aut incidunt perspiciatis id obcaecati corrupti esse quas repellat voluptatibus eum hic?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="sidebar-div">
                 <div class="content" id="sidebar">
-                    <button onclick="build_by_price('asc')">acs sort </button>
+                    <button onclick="build_by_price('asc')">acs sort</button>
                     <button onclick="build_by_price('desc')">desc sort</button>
                     <p style="font-size: 5vw; color: brown;">🛒</p>
                 </div>
@@ -55,6 +66,12 @@
         <div id="checkout">
             <button onclick="checkout()" style="float: right;">Checkout</button>
             <p style="float: right;" id="price">999,99 €</p>
+        </div>
+    </div>
+    <div id="popup">
+        <button onclick="close_popup()">X</button>
+        <div id="popup_info">
+            content content
         </div>
     </div>
     <script src="scripts.js"></script>

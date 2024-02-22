@@ -19,24 +19,11 @@ body {
 }
 
 .content {
-    /* TODO: item grid */
-    /* display: grid;
-    padding: .5em;
-    margin: 1em; */
-    /* border: 1px solid black; */
-    /* border-radius: 15px; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     gap: 2vw;
-}
-
-@media only screen and (max-width: 600px) {
-    .content {
-        grid-template-columns: repeat(1, 1fr);
-        /* Man pls move the title to a different place and make the items grid, thx - L */
-    }
 }
 
 .product_showcase {
@@ -102,7 +89,6 @@ body {
     display:inline;
     z-index: 3;
     background-color: rgba(0, 0, 0, .10);
-    /* padding-left: 5vw; */
     color: #89d6fb;
     
     
@@ -113,7 +99,6 @@ body {
 }
 
 #content-div {
-    /* border: 1px solid black; */
     width: 100%;
     height: 100%;
     position: relative;
@@ -123,17 +108,12 @@ body {
 
 #content-div::before {
     content: '';
-    /* background-image: url(img/bg.jpg); */
-    /* background-size: cover;
-    background-repeat: repeat; */
-    /* opacity: 0; */
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     width: 100%;
     height: 100%;
-    /* position: fixed; */
 }
 
 #toggleBasket {
@@ -174,22 +154,13 @@ img {
     height: 20vh;
     background-color: rgba(0, 0, 0, .75);
     padding: 1em;
-    /* margin-inline: 20%; */
     margin-bottom: 2rem;
     border-radius: 20px;
     width: 500px;
 }
 
-/* .product_showcase h1, p {
-    height: 50%;
-    overflow-y: hidden;
-} */
-
 .price_and_buy {
     float: right;
-    /* position: absolute;
-    right: 5%;
-    bottom: 5%; */
 }
 
 .price_and_buy p {
@@ -209,7 +180,6 @@ li {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* opacity: 0.2; */
 }
 
 #basket {
@@ -226,18 +196,11 @@ li {
     box-shadow: black 0 0 15px;
 }
 
-@media only screen and (max-width: 900px) {
-    #basket {
-        width: 50%;
-    }
-}
-
 .basket_element {
     background-color: var(--clr_accent3);
     display: block;
     margin-bottom: 1em;
     margin-inline: .5em;
-    /* background-color: black; */
     border: 1px solid black;
     border-radius: 15px;
 }
@@ -267,17 +230,29 @@ li {
 }
 
 button {
-    /* float: right; */
     border: 2px solid;
     border-color: var(--clr_accent2);
     background-color: transparent;
     color: var(--clr_accent2);
     border-radius: 10px;
 }
+
 .price_and_buy > p {
     margin: 0px;
 }
 
 .price_and_buy > button {
     float: right;
+}
+
+#popup {
+    /* temp */
+    background-color: white;
+    /* temp */
+    left: 50%;
+    top: -50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    transition: all 1s;
 }

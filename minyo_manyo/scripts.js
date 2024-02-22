@@ -4,6 +4,190 @@ const products = document.getElementById("products");
 const bask_elements = document.getElementById("basket_items");
 const checkout = document.getElementById("checkout");
 const price = document.getElementById("price");
+const popper = document.getElementById("popup");
+const popper_inf = document.getElementById("popup_info");
+
+let poppedup = false;
+
+function main() {
+    // build_by_price()
+    // build_by_price("desc")
+    make_products()
+    recalc_price()
+    popup("test")
+    // does stuff on startup
+}
+
+function popup(info) {
+    if (!poppedup) {
+        change_popup_info(info)
+        popper.style.top = "50%";
+        poppedup = true;
+        console.log("test")
+    }
+}
+
+function close_popup() {
+    if (poppedup) {
+        popper.style.top = "-50%";
+        poppedup = false;
+    }
+
+}
+
+function change_popup_info(info) {
+    switch (info) {
+        case "test":
+            popper_inf.innerText = "info";
+            console.log("test")
+            break;
+    }
+}
+
+function make_products(items = list_of_items) {
+    items.forEach(element => {
+        var div = document.createElement("div");
+        div.setAttribute("class", "product_showcase");
+        var image_div = document.createElement("div");
+        image_div.setAttribute("class", "product_image");
+        image_div.innerHTML = "<img src = \'"+ element.img +"\' alt = \'product image\'>"; // we do a bit of react - L
+        var desc_div = document.createElement("div")
+        desc_div.setAttribute("class", "product_desc");
+        desc_div.innerHTML = `
+        <h3>`+ element.name +`</h3>
+        <p>`+ element.desc +`</p>
+        `;
+        var buton = document.createElement("div");
+        buton.setAttribute("class", "price_and_buy");
+        buton.innerHTML = `
+            <p>` + element.price + `</p>
+            <button onclick="buy(this)" id = "` + element.name + `">Buy</button>
+        
+        `; // we love react
+        div.appendChild(buton);
+        div.appendChild(image_div);
+        div.appendChild(desc_div);
+        products.appendChild(div);
+    });
+}
+
+function buy(that) {
+    let name = that.id;
+
+    if (name) {
+        add_to_basket(name);
+    }
+}
+
+function add_to_basket(name) {
+    list_of_items.forEach(element => {
+        if (element.name == name) {
+            let master_div = document.createElement("div");
+            master_div.setAttribute("class", "basket_element");
+            let img_div = document.createElement("div");
+            img_div.setAttribute("class", "basket_img");
+            img_div.innerHTML = `
+                <img src="` + element.img + `" alt="kep">
+            `;
+            master_div.appendChild(img_div);
+            let desc_div = document.createElement("div");
+            desc_div.setAttribute("class", "basket_desc");
+            desc_div.innerHTML = `
+                <p id="` + element.name + `">` + element.name + `</p>
+                <p>` + element.price + `</p>
+                <button onclick="remove_from_basket(this)" id ="` + element.name + `">Remove</button>
+            `;
+            master_div.appendChild(desc_div);
+            document.getElementById("basket_items").appendChild(master_div);
+        }
+    });
+    recalc_price()
+}
+
+function remove_from_basket(button) {
+    let item_removed = button.parentElement.firstChild.innerText; // for future use, maybe alert?
+    let item_div = button.parentElement.parentElement;
+    bask_elements.removeChild(item_div);
+    recalc_price()
+}
+
+function recalc_price() {
+    let total = 0.00;
+    let to_find = [];
+    let elements = document.getElementsByClassName("basket_desc");
+    for (const child of elements) {
+        for (const chid of child.children) {
+            if (chid.tagName == "BUTTON") {
+                to_find.push(chid.id);
+            }
+        }
+    }
+    for (item of to_find) {
+        for (i of list_of_items) {
+            if (i.name == item) {
+                if (parseInt(i.price) == 0) {
+                    total += 0;
+                } else {
+                    total += parseFloat(i.price) + 0.99;
+                }
+
+            }
+        }
+    }
+    price.innerText = total + " €";
+}
+
+function remove_products() {
+    let items = document.getElementsByClassName("product_showcase");
+
+    while (items[0]) { // because it constantly removes from list, so iterating the list would skip elements
+        items[0].parentNode.removeChild(items[0]);
+    }
+}
+
+let isBasketVisible = false;
+function toggleBasket() {
+    if (isBasketVisible == false) {
+        basket.style.display = "inline";
+    } else {
+        basket.style.display = "none";
+    }
+    isBasketVisible = !isBasketVisible;
+}
+
+function build_by_price(which_way = "asc") {
+    remove_products();
+    make_products(sort_by_price(which_way));
+}
+
+function sort_by_price(which_way) {
+    let sorted_list = [];
+    list_of_items.forEach(element => {
+        sorted_list.push(element)
+    });
+
+    for (let i = 0; i < sorted_list.length; i++) {
+        for (j = 0; i <sorted_list.length; i++) {
+            if (parseInt(sorted_list[j].price > sorted_list[j + 1].price)) {
+                let tmp = sorted_list[j + 1];
+                sorted_list[j + 1] = sorted_list[j];
+                sorted_list[j] = tmp;
+            }
+        }
+    }
+
+    switch (which_way) {
+        case "asc":
+            return sorted_list;
+            break;
+        case "desc":
+            return sorted_list.reverse();
+            break;
+        default:
+            return sorted_list;
+            break;
+    }
+}
 
 const list_of_items = [
     {
@@ -87,174 +271,3 @@ const list_of_items = [
 
     
 ]
-
-function main() {
-    // build_by_price()
-    // build_by_price("desc")
-    make_products()
-    recalc_price()
-    // does stuff on startup
-}
-
-let isBasketVisible = false;
-function toggleBasket() {
-    if (isBasketVisible == false) {
-        basket.style.display = "inline";
-    } else {
-        basket.style.display = "none";
-    }
-    isBasketVisible = !isBasketVisible;
-}
-
-// let isSidebarVisible = false;
-// function toggleSidebar() {
-//     if (isSidebarVisible == false) {
-//         sidebar.style.display = "inline";
-//     } else {
-//         sidebar.style.display = "none";
-//     }
-//     isSidebarVisible = !isSidebarVisible;
-// }
-
-function make_products(items = list_of_items) {
-    items.forEach(element => {
-        var div = document.createElement("div");
-        div.setAttribute("class", "product_showcase");
-        var image_div = document.createElement("div");
-        image_div.setAttribute("class", "product_image");
-        image_div.innerHTML = "<img src = \'"+ element.img +"\' alt = \'product image\'>"; // we do a bit of react - L
-        var desc_div = document.createElement("div")
-        desc_div.setAttribute("class", "product_desc");
-        desc_div.innerHTML = `
-        <h3>`+ element.name +`</h3>
-        <p>`+ element.desc +`</p>
-        `;
-        var buton = document.createElement("div");
-        buton.setAttribute("class", "price_and_buy");
-        buton.innerHTML = `
-            <p>` + element.price + `</p>
-            <button onclick="buy(this)" id = "` + element.name + `">Buy</button>
-        
-        `; // we love react
-        div.appendChild(buton);
-        div.appendChild(image_div);
-        div.appendChild(desc_div);
-        products.appendChild(div);
-    });
-}
-
-function remove_products() {
-    let items = document.getElementsByClassName("product_showcase");
-
-    while (items[0]) { // because it constantly removes from list, so iterating the list would skip elements
-        items[0].parentNode.removeChild(items[0]);
-    }
-}
-
-function buy(that) {
-    // desk_div = that.parentElement.parentElement.getElementsByClassName("product_desc")[0];
-    let name;
-    // for (const child of desk_div.children) {
-    //     if (child.tagName == "H3") {
-    //         name = child.innerText;
-    //     }
-
-    name = that.id;
-
-    // }
-    if (name) {
-        add_to_basket(name);
-    }
-}
-
-function add_to_basket(name) {
-    list_of_items.forEach(element => {
-        if (element.name == name) {
-            let master_div = document.createElement("div");
-            master_div.setAttribute("class", "basket_element");
-            let img_div = document.createElement("div");
-            img_div.setAttribute("class", "basket_img");
-            img_div.innerHTML = `
-                <img src="` + element.img + `" alt="kep">
-            `;
-            master_div.appendChild(img_div);
-            let desc_div = document.createElement("div");
-            desc_div.setAttribute("class", "basket_desc");
-            desc_div.innerHTML = `
-                <p id="` + element.name + `">` + element.name + `</p>
-                <p>` + element.price + `</p>
-                <button onclick="remove_from_basket(this)" id ="` + element.name + `">Remove</button>
-            `;
-            master_div.appendChild(desc_div);
-            document.getElementById("basket_items").appendChild(master_div);
-        }
-    });
-    recalc_price()
-}
-
-function remove_from_basket(button) {
-    let item_removed = button.parentElement.firstChild.innerText; // for future use, maybe alert?
-    let item_div = button.parentElement.parentElement;
-    bask_elements.removeChild(item_div);
-    recalc_price()
-}
-
-function build_by_price(which_way = "asc") {
-    remove_products();
-    make_products(sort_by_price(which_way));
-}
-
-function sort_by_price(which_way) {
-    let sorted_list = [];
-    list_of_items.forEach(element => {
-        sorted_list.push(element)
-    });
-
-    for (let i = 0; i < sorted_list.length; i++) {
-        for (j = 0; i <sorted_list.length; i++) {
-            if (parseInt(sorted_list[j].price > sorted_list[j + 1].price)) {
-                let tmp = sorted_list[j + 1];
-                sorted_list[j + 1] = sorted_list[j];
-                sorted_list[j] = tmp;
-            }
-        }
-    }
-
-    switch (which_way) {
-        case "asc":
-            return sorted_list;
-            break;
-        case "desc":
-            return sorted_list.reverse();
-            break;
-        default:
-            return sorted_list;
-            break;
-    }
-}
-
-function recalc_price() {
-    let total = 0.00;
-    let to_find = [];
-    let elements = document.getElementsByClassName("basket_desc");
-    for (const child of elements) {
-        for (const chid of child.children) {
-            if (chid.tagName == "BUTTON") {
-                to_find.push(chid.id);
-            }
-        }
-    }
-    for (item of to_find) {
-        for (i of list_of_items) {
-            if (i.name == item) {
-                if (parseInt(i.price) == 0) {
-                    total += 0;
-                } else {
-                    total += parseFloat(i.price) + 0.99;
-                }
-
-            }
-        }
-    }
-    price.innerText = total + " €";
-}
