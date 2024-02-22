@@ -84,7 +84,7 @@ body {
     width: 20vw;
     height: 100%;
     right: -17vw;
-    transition: left 1.3s,background-color 1.3s,
+    transition: right 1.3s,background-color 1.3s,
 }
 #brisket:hover {
     right: 0vw;
