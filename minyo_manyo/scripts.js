@@ -4,14 +4,44 @@ const products = document.getElementById("products");
 const bask_elements = document.getElementById("basket_items");
 const checkout = document.getElementById("checkout");
 const price = document.getElementById("price");
+const popper = document.getElementById("popup");
+const popper_inf = document.getElementById("popup_info");
 
+let poppedup = false;
 
 function main() {
     // build_by_price()
     // build_by_price("desc")
     make_products()
     recalc_price()
+    popup("test")
     // does stuff on startup
+}
+
+function popup(info) {
+    if (!poppedup) {
+        change_popup_info(info)
+        popper.style.top = "50%";
+        poppedup = true;
+        console.log("test")
+    }
+}
+
+function close_popup() {
+    if (poppedup) {
+        popper.style.top = "-50%";
+        poppedup = false;
+    }
+
+}
+
+function change_popup_info(info) {
+    switch (info) {
+        case "test":
+            popper_inf.innerText = "info";
+            console.log("test")
+            break;
+    }
 }
 
 function make_products(items = list_of_items) {

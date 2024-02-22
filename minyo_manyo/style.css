@@ -241,3 +241,15 @@ button {
 .price_and_buy > button {
     float: right;
 }
+
+#popup {
+    /* temp */
+    background-color: white;
+    /* temp */
+    left: 50%;
+    top: -50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    transition: all 1s;
+}
