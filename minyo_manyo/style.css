@@ -212,7 +212,7 @@ li {
     background-color: rgba(0, 0, 0, .85);
 }
 
-.basket_element {
+.basket_element{
     background-color: #01303f55; /* transparent backdrop var */
     color: var(--clr_midlevel);
     display: block;
@@ -220,14 +220,6 @@ li {
     margin-inline: .5em;
     border: 1px solid black;
     border-radius: 15px;
-}
-
-.basket_element > button {
-    border: 2px solid;
-    border-color: var(--clr_midlevel);
-    background-color: transparent;
-    color: var(--clr_midlevel);
-    border-radius: 10px;
 }
 
 .basket_element > * {

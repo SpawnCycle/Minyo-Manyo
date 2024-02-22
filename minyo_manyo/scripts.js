@@ -49,10 +49,11 @@ function change_popup_info(info) {
 function checkout_baton() {
     close_popup()
     sleep(500).then(() => {
-        while (bask_elements.children[0]) {
+        while (bask_elements.children && bask_elements.children[0]) {
             bask_elements.removeChild(bask_elements.children[0])
         }
         popup("bui")
+        recalc_price()
     })
 }
 
