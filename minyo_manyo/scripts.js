@@ -25,6 +25,12 @@ function popup(info) {
         popper.style.top = "50%";
         poppedup = true;
     }
+    else {
+        close_popup()
+        sleep(400).then(() => {
+            popup(info);
+        })
+    }
 }
 
 function close_popup() {
