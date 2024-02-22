@@ -49,8 +49,8 @@ function change_popup_info(info) {
 function checkout_baton() {
     close_popup()
     sleep(500).then(() => {
-        for (const child of bask_elements.children) {
-            bask_elements.removeChild(child);
+        while (bask_elements.children[0]) {
+            bask_elements.removeChild(bask_elements.children[0])
         }
         popup("bui")
     })
@@ -157,15 +157,15 @@ function remove_products() {
     }
 }
 
-let isBasketVisible = false;
-function toggleBasket() {
-    if (isBasketVisible == false) {
-        basket.style.display = "inline";
-    } else {
-        basket.style.display = "none";
-    }
-    isBasketVisible = !isBasketVisible;
-}
+// let isBasketVisible = false;
+// function toggleBasket() {
+//     if (isBasketVisible == false) {
+//         basket.style.display = "inline";
+//     } else {
+//         basket.style.display = "none";
+//     }
+//     isBasketVisible = !isBasketVisible;
+// }
 
 function build_by_price(which_way = "asc") {
     remove_products();
