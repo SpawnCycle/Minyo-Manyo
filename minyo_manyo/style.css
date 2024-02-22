@@ -39,7 +39,7 @@ body {
 
 #navbar {
     border: 1px solid black; /*if i remove this line, a mysterious white line appears. Don't ask me - D*/ /* Damn xd - L*/
-    height: 7%;
+    height: 7vh;
     width: 100%;
     background-color: var(--clr_backdrop);
     border-bottom: var(--clr_accent1) 4px solid;
@@ -49,6 +49,7 @@ body {
     justify-content: center;
     position: relative;
     background: linear-gradient(0deg, rgb(0, 0, 0, .5) 0%, rgba(0, 0, 0, .35) 25%, rgba(255, 255, 255, 0) 100%);
+    z-index: 3;
 }
 
 .product_image {
@@ -74,11 +75,25 @@ body {
     height: 90%;
     display: flex;
 }
-
+#brisket {
+    top: 7vh;
+    display: inline;
+    z-index: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .10);
+    width: 20vw;
+    height: 100%;
+    right: -17vw;
+    transition: left 1.3s,background-color 1.3s,
+}
+#brisket:hover {
+    right: 0vw;
+    background-color: rgba(0, 0, 0, .85);
+}
 #sidebar-div {
     position: absolute;
     left: -17vw;
-    transition: left 1.3s,background-color 1.3s, margin-right 1.3s;
+    transition: left 1.3s,background-color 1.3s,;
     border-right: 1px solid var(--clr_accent3) ;
     width: 20vw;
     height: 100%;
