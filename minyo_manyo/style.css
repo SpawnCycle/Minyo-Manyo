@@ -272,13 +272,30 @@ button {
 }
 
 #popup {
-    /* temp */
-    background-color: white;
-    /* temp */
+    background-color: #010e0fee; 
+    border: 2px solid #01303f9f;
+    color: var(--clr_accent2);
+    border-radius: 25px;
+    position: relative;
     left: 50%;
     top: -50%;
     transform: translateY(-50%);
     transform: translateX(-50%);
     position: absolute;
     transition: all 1s;
+}
+
+#popup > * {
+    padding: 25px;
+}
+
+#popup > button {
+    color: red;
+    border-color: #ff000033;
+    position: absolute;
+    padding: 0;
+    top: 5%;
+    right: 5%;
+    width: 25px;
+    height: 25px;
 }

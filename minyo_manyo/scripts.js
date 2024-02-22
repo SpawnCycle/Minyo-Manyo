@@ -48,7 +48,7 @@ function change_popup_info(info) {
 
 function checkout_baton() {
     close_popup()
-    sleep(500).then(() => {
+    sleep(400).then(() => {
         while (bask_elements.children && bask_elements.children[0]) {
             bask_elements.removeChild(bask_elements.children[0])
         }
