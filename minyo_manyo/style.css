@@ -103,6 +103,7 @@ body {
     z-index: 3;
     background-color: rgba(0, 0, 0, .10);
     color: #89d6fb;
+    padding-top: 2em;
 }
 
 #sidebar-div:hover {
@@ -305,4 +306,29 @@ button {
 
 ::-webkit-scrollbar {
     width: 0;
-}   
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+
+.dropdown-content > * {
+    margin-top: .5em;
+    margin-left: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--clr_bg);
+}

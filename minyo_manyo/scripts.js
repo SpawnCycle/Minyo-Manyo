@@ -291,7 +291,5 @@ const list_of_items = [
         img: "img/product_images/pi_400.png",
         price: "48,99 €",
         desc: "Redefining the concept of personal computing, the Raspberry Pi 400 integrated the Pi 4 Model B into a sleek keyboard form factor, offering a complete desktop experience in a compact package.",
-    },
-
-    
+    },   
 ]

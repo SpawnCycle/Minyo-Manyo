@@ -42,9 +42,13 @@
             </div>
             <div id="sidebar-div">
                 <div class="content" id="sidebar">
-                    <button onclick="build_by_price('asc')">acs sort</button>
-                    <button onclick="build_by_price('desc')">desc sort</button>
-                    <!-- <p style="font-size: 5vw; color: brown;">🛒</p> -->
+                    <div class="dropdown">
+                        <button>Sorting method</button>
+                        <div class="dropdown-content">
+                            <button onclick="build_by_price('asc')">Acsending</button>
+                            <button onclick="build_by_price('desc')">Descending</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="basket">
