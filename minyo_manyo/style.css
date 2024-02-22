@@ -246,7 +246,7 @@ li {
 }
 
 #basket_items {
-    height: 75%;
+    height: 70%;
     overflow-y: scroll;
 }
 
@@ -302,3 +302,7 @@ button {
     width: 25px;
     height: 25px;
 }
+
+::-webkit-scrollbar {
+    width: 0;
+}   

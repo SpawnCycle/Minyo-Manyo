@@ -41,8 +41,19 @@ function change_popup_info(info) {
             popper_inf.innerText = "info";
             break;
         case "bui":
-            popper_inf.innerText = "Thank you for buying " + total + " € ammount of items";
+            popper_inf.innerText = "Thank you for buying " + total + " € worth of items";
             break;
+        case "about":
+            popper_inf.innerText = "Our fabulous company born on hopes and dream in 1984 now became a multimillion dollar enterprise. If you've never heard of it, it's your fault.";
+            break;
+        case "bus":
+            popper_inf.innerHTML = `<a href='https://paksbusz.hu/menetrend/' target="_blank">Click for funsies</a>`;
+            break;
+        case "mot":
+            popper_inf.innerText = "We wanted to reinvent online shopping :D";
+            break;
+        case "rickroll":
+            popper_inf.innerHTML = `<a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target="_blank">Click me</a>`
     }
 }
 
