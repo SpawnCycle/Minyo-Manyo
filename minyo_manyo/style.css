@@ -109,7 +109,7 @@ body {
 }
 #sidebar-div:hover {
     left: 0vw;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .85);
 }
 
 #content-div {
@@ -267,9 +267,10 @@ li {
 button {
     /* float: right; */
     border: 2px solid;
-    border-color: var(--clr_midlevel);
+    border-color: var(--clr_accent2);
     background-color: transparent;
-    color: var(--clr_midlevel);
+    color: var(--clr_accent2);
+    border-radius: 10px;
 }
 .price_and_buy > p {
     margin: 0px;
